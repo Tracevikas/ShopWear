@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>ShopMart</title>
+        <title>Shopmart.com | A Heaven Place</title>
         <meta name="description" content="Shopmart.com | A Heaven Place" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.jpg" />
       </Head>
-    <div className="mx-4 bg-slate-100">hii this is vikas</div>
+    <div className="mx-3 bg-slate-600">hii this is vikas</div>
     </div>
   )
 }
