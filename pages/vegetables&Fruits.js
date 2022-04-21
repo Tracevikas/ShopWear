@@ -3,7 +3,7 @@ import React from 'react'
 const grocery = () => {
   return (
     <div>
-      this is grocery page!
+      this is grocery page
     </div>
   )
 }
