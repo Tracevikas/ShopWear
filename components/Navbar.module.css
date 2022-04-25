@@ -1,0 +1,7 @@
+.sidecart{
+    z-index: 1;
+}
+.main{z-index: -1;}
+/* .dis{
+    display: none;
+} */
