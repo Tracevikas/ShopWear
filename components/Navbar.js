@@ -8,7 +8,18 @@ import{AiFillCloseCircle , AiFillPlusCircle, AiFillMinusCircle} from  'react-ico
 import{BsFillBagCheckFill} from 'react-icons/Bs';
 import { useState } from "react";
 const Navbar = () => {
-
+  const toggleCart=()=>
+{if(ref.current.classList.contains('translate-x-full')){
+  ref.current.classList.remove('translate-x-full')
+  ref.current.classList.add('translate-x-0')
+}else if(ref.current.classList.contains('translate-x-0')){
+  ref.current.classList.remove('translate-x-0')
+  ref.current.classList.add('translate-x-full')
+}}
+const closeCart=()=>{
+  
+}
+const ref=useRef()
   return (
     <div className={styles.main}>
       <div className="flex flex-col md:flex-row  md:justify-start justify-center py-2 shadow-md items-center">
@@ -23,13 +34,12 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-          <div   className= {`cursor-pointer cart  absolute right-0 top-4 mx-5`}>
+          <div onClick={toggleCart} className=" cursor-pointer cart  absolute right-0 top-4 mx-5  ">
            <FiShoppingCart className="text-2xl md:text-2xl"/>
           </div>
-        
-<div className={`sidecart  w-72 sidecart absolute   top-0 right-0 bg-red-100 px-8 py-10 ${styles.dis}`}>
+<div  style={{zIndex:1}} ref={ref}  className={`sidecart  w-72 sidecart absolute ${styles.dis} top-0 right-0 transform transition-transform translate-x-full bg-red-100 px-8 py-10 `}>
 <h2 className="font-bold text-xl text-center"> Shopping Cart </h2>
-<span  className="absolute top-5 right-2 cursor-pointer text-2xl text-red-500" ><AiFillCloseCircle/></span>
+<span onClick={toggleCart} className="absolute top-5 right-2 cursor-pointer text-2xl text-red-500" ><AiFillCloseCircle/></span>
 <ol className="list-decimal font-semibold">
 <li>
 <div className="item flex my-5">
@@ -72,12 +82,13 @@ const Navbar = () => {
 </div>
 </li>
 </ol>
-<button className="flex mt-16 text-white bg-red-500 border-0 py-2 px-6 hover:bg-pink-600 rounded text-sm" ><BsFillBagCheckFill className="mt-1"/>CheckOut</button>
+<div className="flex">
+<button className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2 hover:bg-pink-600 rounded text-sm" ><BsFillBagCheckFill className="mt-1"/>CheckOut</button>
+<button className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2 hover:bg-pink-600 rounded text-sm" > Clear Cart</button>
 </div>
 </div>
-
-
-  );
+</div>
+);
 };
 
 export default Navbar;
