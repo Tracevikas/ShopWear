@@ -1,13 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Footer from '../components/footer'
-import Header from '../components/header'
-import Navbar from '../components/navbar'
 import styles from './index.module.css'
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.main}>
       <Head>
         <title>Shopmart.com | A Heaven Place</title>
         <meta name="description" content="Shopmart.com | A Heaven Place" />
