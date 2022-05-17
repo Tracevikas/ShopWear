@@ -16,19 +16,19 @@ const Footer = () => {
     </div>
     <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Products</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+           <Link href={'/vegetables&Fruits'}><a className="text-gray-600 hover:text-gray-800">Vegetables&Fruits</a></Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+          <Link href={'/dairyproducts'}><a className="text-gray-600 hover:text-gray-800">Dairy Products</a></Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+          <Link href={'/munchies'}><a className="text-gray-600 hover:text-gray-800">Munchies</a></Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+          <Link href={'/sweettooth'}><a className="text-gray-600 hover:text-gray-800">Sweet Tooth</a></Link>
           </li>
         </nav>
       </div>
@@ -50,7 +50,7 @@ const Footer = () => {
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Policy</h2>
         <nav className="list-none mb-10">
           <li>
             <a className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -67,7 +67,7 @@ const Footer = () => {
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">About</h2>
         <nav className="list-none mb-10">
           <li>
             <a className="text-gray-600 hover:text-gray-800">First Link</a>
