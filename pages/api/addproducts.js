@@ -10,7 +10,9 @@ const handler = async (req, res) => {
         desc: req.body[i].desc,
         img: req.body[i].img,
         category: req.body[i].category,
-        price: req.body[i].price,
+        price:req.body[i].price, 
+        size: req.body[i].size,
+        color: req.body[i].color,
         availableQty: req.body[i].availableQty,
       });
       await p.save();

@@ -6,19 +6,19 @@ export default function Home() {
   return (
     <div className={styles.main}>
       <Head>
-        <title>Shopmart.com | A Heaven Place</title>
-        <meta name="description" content="Shopmart.com | A Heaven Place" />
-        <link rel="icon" href="/logo.jpg" />
+        <title>ShopWear.com | A Heaven Place</title>
+        <meta name="description" content="ShopWear.com | A Heaven Place" />
+        <link rel="icon" href="/logo.PNG" />
       </Head>
   
  
   <div> 
-    <Image  className={styles.banner} src='/banner.png' width={1450} height={400}/>
+    <Image  className={styles.banner} src='/banner.jpg' width={1450} height={400}/>
   </div>
   <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">ShopMart.com</h1>
+      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">ShopWear.com</h1>
       <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">“We're all searching for a piece of home, or a piece of ourselves. We look for a taste of it in the food we order and the ingredients we buy.
 </p>
     </div>

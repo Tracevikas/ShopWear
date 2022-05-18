@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10 custom">
      <Link href={"/"}>
       <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 custom">
-        <Image className={styles.footerimg}   height={162} width={150}  src="/footerlogo.png" />     
+        <Image className={styles.footerimg}   height={162} width={150}  src="/logo.PNG" />     
        </a></Link>
       
     </div>
@@ -87,7 +87,7 @@ const Footer = () => {
   </div>
   <div className="bg-gray-100">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 ShopMart 
+      <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 ShopWear
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank"></a>
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
