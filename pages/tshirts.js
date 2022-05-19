@@ -17,7 +17,7 @@ const dailyproducts = ({products}) => {
         </a>
         <div className="mt-4">
           <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{products[items].category}</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">{products[items].desc}</h2>
+          <h2 className="text-gray-900 title-font text-lg font-medium">{products[items].title}</h2>
           <p className="mt-1">₹{products[items].price}</p>
           <div className="mt-1">
           {products[items].size.includes('S') && <span className='border border-gray-300 px-1 mx-1'>S</span>} 
@@ -31,7 +31,7 @@ const dailyproducts = ({products}) => {
           {products[items].color.includes('blue') && <button class="border-2 border-gray-300 ml-1 bg-blue-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
           {products[items].color.includes('green') && <button class="border-2 border-gray-300 ml-1 bg-green-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
           {products[items].color.includes('white') && <button class="border-2 border-gray-300 ml-1 bg-white-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
-          {products[items].color.includes('black') && <button class="border-2 border-gray-300 ml-1 bg-black-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
+          {products[items].color.includes('gray') && <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
             </div>
         </div>
       </div></Link>)}
@@ -53,8 +53,8 @@ export async function getServerSideProps(context) {
       if(!tshirts[item.title].color.includes(item.color) && item.availableQty > 0){
           tshirts[item.title].color.push(item.color)
       }
-      if(!tshirts[item.title].color.includes(item.color) && item.availableQty > 0){
-          tshirts[item.title].color.push(item.color)
+      if(!tshirts[item.title].size.includes(item.size) && item.availableQty > 0){
+          tshirts[item.title].size.push(item.size)
       }
   }else
   {
