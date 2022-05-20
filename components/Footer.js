@@ -19,33 +19,30 @@ const Footer = () => {
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Products</h2>
         <nav className="list-none mb-10">
           <li>
-           <Link href={'/vegetables&Fruits'}><a className="text-gray-600 hover:text-gray-800">Vegetables&Fruits</a></Link>
+           <Link href={'/tshirts'}><a className="text-gray-600 hover:text-gray-800">Tshirts</a></Link>
           </li>
           <li>
-          <Link href={'/dairyproducts'}><a className="text-gray-600 hover:text-gray-800">Dairy Products</a></Link>
+          <Link href={'/hoodies'}><a className="text-gray-600 hover:text-gray-800">Hoodies</a></Link>
           </li>
           <li>
-          <Link href={'/munchies'}><a className="text-gray-600 hover:text-gray-800">Munchies</a></Link>
+          <Link href={'/stickers'}><a className="text-gray-600 hover:text-gray-800">Stickers</a></Link>
           </li>
           <li>
-          <Link href={'/sweettooth'}><a className="text-gray-600 hover:text-gray-800">Sweet Tooth</a></Link>
+          <Link href={'/mugs'}><a className="text-gray-600 hover:text-gray-800">Mugs</a></Link>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Customer Service</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <Link href={'/contact'}><a className="text-gray-600 hover:text-gray-800">Contact Us</a></Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <Link href={'/about'}><a className="text-gray-600 hover:text-gray-800">About Us</a></Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+           <Link href={'/returnpolicy'}><a className="text-gray-600 hover:text-gray-800">Return Policy</a></Link> 
           </li>
         </nav>
       </div>
@@ -53,33 +50,10 @@ const Footer = () => {
         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Policy</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <Link href={'/privacy'}><a className="text-gray-600 hover:text-gray-800">Privacy Policy</a></Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-          </li>
-        </nav>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">About</h2>
-        <nav className="list-none mb-10">
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <Link href={'/terms'}><a className="text-gray-600 hover:text-gray-800">Terms and Conditions</a></Link>
           </li>
         </nav>
       </div>
@@ -87,7 +61,7 @@ const Footer = () => {
   </div>
   <div className="bg-gray-100">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 ShopWear
+      <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 ShopWear.com -- All Rights Reserved
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank"></a>
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">

@@ -40,7 +40,7 @@ const ref=useRef()
            <Link href={'/login'}><a> <MdAccountCircle className="text-2xl mx-2 md:text-2xl"/> </a></Link>
            <FiShoppingCart onClick={toggleCart} className="text-2xl md:text-2xl"/>
           </div>
-<div  style={{zIndex:1}} ref={ref}  className={`sidecart   h-[100vh] w-72 sidecart absolute ${styles.dis} top-0 right-0 transform transition-transform ${Object.keys(cart).length !==0 ? 'translate-x-0':'translate-x-full'}  bg-red-100 px-8 py-10 `}>
+<div  style={{zIndex:1}} ref={ref}  className={`sidecart   h-[100vh] overflow-y-scroll w-72 sidecart absolute ${styles.dis} top-0 right-0 transform transition-transform ${Object.keys(cart).length !==0 ? 'translate-x-0':'translate-x-full'}  bg-red-100 px-8 py-10 `}>
 <h2 className="font-bold text-xl text-center"> Shopping Cart </h2>
 <span onClick={toggleCart} className="absolute top-5 right-2 cursor-pointer text-2xl text-red-500" ><AiFillCloseCircle/></span>
 <ol className="list-decimal font-semibold">
