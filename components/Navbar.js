@@ -9,7 +9,7 @@ import{BsFillBagCheckFill} from 'react-icons/Bs';
 import{MdAccountCircle} from 'react-icons/Md';
 
 import { useState } from "react";
-const Navbar = ({cart ,addToCart, removeFromCart,clearCart,subTotal}) => {
+const Navbar = ({ user,cart ,addToCart, removeFromCart,clearCart,subTotal}) => {
   const toggleCart=()=>
 {if(ref.current.classList.contains('translate-x-full')){
   ref.current.classList.remove('translate-x-full')
@@ -36,9 +36,10 @@ const ref=useRef()
           </ul>
         </div>
       </div>
-          <div  className=" cursor-pointer cart flex absolute right-0 top-4 mx-5  ">
-           <Link href={'/login'}><a> <MdAccountCircle className="text-2xl mx-2 md:text-2xl"/> </a></Link>
-           <FiShoppingCart onClick={toggleCart} className="text-2xl md:text-2xl"/>
+          <div  className=" cursor-pointer  items-center cart flex absolute right-0 top-4 mx-5  ">
+          {user.value && <MdAccountCircle className="text-2xl mx-2 md:text-2xl"/>}
+          {!user.value && <Link href={'/login'}><a><button className="bg-red-500 px-2 py-2 rounded-md text-sm text-white mx-2" >Login</button>  </a></Link>}
+           <FiShoppingCart onClick={toggleCart} className="text-2xl md:text-2xl "/>
           </div>
 <div  style={{zIndex:1}} ref={ref}  className={`sidecart   h-[100vh] overflow-y-scroll w-72 sidecart absolute ${styles.dis} top-0 right-0 transform transition-transform ${Object.keys(cart).length !==0 ? 'translate-x-0':'translate-x-full'}  bg-red-100 px-8 py-10 `}>
 <h2 className="font-bold text-xl text-center"> Shopping Cart </h2>
