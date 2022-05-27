@@ -12,6 +12,9 @@ function MyApp({ Component, pageProps }) {
  const[key,setKey]=useState()
  const router = useRouter();
  useEffect(()=>{
+  router.events.on('routeChangeStart',()=>{
+    setProgress(40)
+  },[router.query])
    router.events.on('routeChangeComplete',()=>{
      setProgress(100)
    },[router.query])
@@ -28,7 +31,7 @@ function MyApp({ Component, pageProps }) {
 setUser({value:token})
 setKey(Math.random())
    }
- },[])
+ },[router.query])
 
  const saveCart=(myCart)=>
  {
@@ -52,6 +55,11 @@ setKey(Math.random())
    setCart(newCart)
    saveCart(newCart)
  }
+ const logout =()=>{
+   localStorage.removeItem('token')  
+   setKey(Math.random())
+   setUser({value:null})
+ }
  const buyNow = (itemCode,qty,price,name,size,varient)=>{
    let newCart = {itemCode:{qty:1,price,name,size,varient}}
    setCart(newCart)
@@ -61,6 +69,7 @@ setKey(Math.random())
  const clearCart=()=>{
   setCart({})
   saveCart({})
+  localStorage.removeItem('cart')
 }
 const removeFromCart=(itemCode,qty,price,name,size,varient)=>{
   let newCart=cart;
@@ -78,7 +87,7 @@ const removeFromCart=(itemCode,qty,price,name,size,varient)=>{
     color='#f11946'
     progress={progress}
     onLoaderFinished={() => setProgress(0)}
-  /> <Navbar user={user} key={key} cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
+  /> <Navbar logout={logout} user={user} key={key} cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
    <Component  cart={cart} buyNow={buyNow} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
  
 <Footer/></>}

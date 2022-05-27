@@ -7,9 +7,9 @@ import { FiShoppingCart } from 'react-icons/Fi';
 import{AiFillCloseCircle , AiFillPlusCircle, AiFillMinusCircle} from  'react-icons/Ai';
 import{BsFillBagCheckFill} from 'react-icons/Bs';
 import{MdAccountCircle} from 'react-icons/Md';
-
 import { useState } from "react";
-const Navbar = ({ user,cart ,addToCart, removeFromCart,clearCart,subTotal}) => {
+const Navbar = ({ logout ,user,cart ,addToCart, removeFromCart,clearCart,subTotal}) => {
+  const[dropdown , setDropdown]=useState(false)
   const toggleCart=()=>
 {if(ref.current.classList.contains('translate-x-full')){
   ref.current.classList.remove('translate-x-full')
@@ -36,8 +36,16 @@ const ref=useRef()
           </ul>
         </div>
       </div>
-          <div  className=" cursor-pointer  items-center cart flex absolute right-0 top-4 mx-5  ">
-          {user.value && <MdAccountCircle className="text-2xl mx-2 md:text-2xl"/>}
+          <div  className=" cursor-pointer  items-center cart absolute right-0 top-4 mx-5 flex ">
+         <a onMouseOver={()=>setDropdown(true)} onMouseLeave={()=>setDropdown(false)}>
+          {dropdown &&<div onMouseOver={()=>setDropdown(true)} onMouseLeave={()=>setDropdown(false)}
+           className={`${styles.hvr} absolute right-8 bg-white top-7 rounded-md px-5 w-36`}>
+          <ul>
+           <Link href={'/myaccount'}><a><li className="py-1 text-sm hover:text-red-700">My Account</li></a></Link>
+           <Link href={'/orders'}><a><li className="py-1 text-sm hover:text-red-700">Orders</li></a></Link>
+            <li onClick={logout} className="py-1 text-sm hover:text-red-500">Logout</li>
+          </ul></div>}
+          {user.value && <MdAccountCircle  className="text-2xl mx-2 md:text-2xl"/>}</a>
           {!user.value && <Link href={'/login'}><a><button className="bg-red-500 px-2 py-2 rounded-md text-sm text-white mx-2" >Login</button>  </a></Link>}
            <FiShoppingCart onClick={toggleCart} className="text-2xl md:text-2xl "/>
           </div>
