@@ -8,3 +8,6 @@
 .logo{
     max-height: 218px;
 }
+.hvr{
+    z-index: 1;
+}
