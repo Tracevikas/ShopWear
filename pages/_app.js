@@ -59,6 +59,7 @@ setKey(Math.random())
    localStorage.removeItem('token')  
    setKey(Math.random())
    setUser({value:null})
+   router.push('/')
  }
  const buyNow = (itemCode,qty,price,name,size,varient)=>{
    let newCart = {itemCode:{qty:1,price,name,size,varient}}
@@ -87,7 +88,8 @@ const removeFromCart=(itemCode,qty,price,name,size,varient)=>{
     color='#f11946'
     progress={progress}
     onLoaderFinished={() => setProgress(0)}
-  /> <Navbar logout={logout} user={user} key={key} cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
+  />
+  {key && <Navbar logout={logout} user={user} key={key} cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />}
    <Component  cart={cart} buyNow={buyNow} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
  
 <Footer/></>}
