@@ -27,11 +27,11 @@ const hoodies = ({products}) => {
           {products[items].size.includes('XXL') && <span className='border border-gray-300 px-1 mx-1'>XXL</span>} 
           </div>
           <div className="mt-1">
-          {products[items].color.includes('red') && <button class="border-2 border-gray-300 ml-1 bg-red-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
-          {products[items].color.includes('blue') && <button class="border-2 border-gray-300 ml-1 bg-blue-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
-          {products[items].color.includes('green') && <button class="border-2 border-gray-300 ml-1 bg-green-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
-          {products[items].color.includes('white') && <button class="border-2 border-gray-300 ml-1 bg-white-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
-          {products[items].color.includes('gray') && <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
+          {products[items].color.includes('red') && <button className="border-2 border-gray-300 ml-1 bg-red-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
+          {products[items].color.includes('blue') && <button className="border-2 border-gray-300 ml-1 bg-blue-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
+          {products[items].color.includes('green') && <button className="border-2 border-gray-300 ml-1 bg-green-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
+          {products[items].color.includes('white') && <button className="border-2 border-gray-300 ml-1 bg-white-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
+          {products[items].color.includes('gray') && <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>} 
             </div>
         </div>
       </div></Link>)}
