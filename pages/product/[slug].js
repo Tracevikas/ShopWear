@@ -12,7 +12,7 @@ const products = ({buyNow ,addToCart ,product,varients}) => {
     const[pin , setpin]=useState()
     const[service , setservice]= useState()
     const checkServicibility = async()=>{
-let pins = await fetch('http://localhost:3000/api/pincode')
+let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`)
 let pinJson = await pins.json()
 if(pinJson.includes(parseInt(pin))){
   setservice(true)
@@ -46,7 +46,7 @@ if(pinJson.includes(parseInt(pin))){
 
     const refereshVarients=(newsize, newcolor)=>{
    
-let url = `http://localhost:3000/product/${varients[newcolor][newsize]['slug']}`
+let url = `${process.env.NEXT_PUBLIC_HOST}/product/${varients[newcolor][newsize]['slug']}`
 window.location=url;
     }
   return (
@@ -95,7 +95,7 @@ pauseOnHover
               {Object.keys(varients[color]).includes('XXXL') &&  <option value={'XXXL'}>XXXL</option>}
               </select>
               <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
-                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-4 h-4" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4" viewBox="0 0 24 24">
                   <path d="M6 9l6 6 6-6"></path>
                 </svg>
               </span>
@@ -106,7 +106,7 @@ pauseOnHover
           
           <span className="title-font mt-15 font-medium text-2xl text-gray-900">₹{product.price}</span>
           <button onClick={()=>{buyNow(slug,1,product.price,product.title,size, color)}} className="flex mt-15 ml-8 text-white bg-red-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-red-600 rounded">Buy Now</button>
-          <button  onClick={()=>{addToCart(slug,1,product.price,product.title,size, color)}} className="flex mt-15 ml-4 text-white bg-red-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-red-600 rounded">Add to Cart</button>
+          <button  onClick={()=>{addToCart(slug,1,product.price,product.title,size, color)}} className="flex mt-15 ml-4 text-white bg-red-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-red-600 rounded  add-to-cart">Add to Cart</button>
       
         
         </div>

@@ -9,10 +9,10 @@ const order = () => {
           <h2 className="text-sm title-font text-gray-500 tracking-widest">SHOPWEa.COM</h2>
           <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">Order Id: #489489</h1>
           <p className="leading-relaxed mb-4">Your Order Has been Successfull Placed</p>
-          <div class="flex mb-4">
-          <a class="flex-grow  py-2 text-lg px-1">Product  Description</a>
-          <a class="flex-grow  py-2 text-lg px-1">Quantity</a>
-          <a class="flex-grow  py-2 text-lg px-1">Price</a>
+          <div className="flex mb-4">
+          <a className="flex-grow  py-2 text-lg px-1">Product  Description</a>
+          <a className="flex-grow  py-2 text-lg px-1">Quantity</a>
+          <a className="flex-grow  py-2 text-lg px-1">Price</a>
         </div>
        
           <div className="flex border-t border-gray-200 py-2">

@@ -1,10 +1,52 @@
 import React from "react";
 import Link from "next/link";
 import{ AiFillPlusCircle, AiFillMinusCircle} from  'react-icons/Ai';
-import{BsFillBagCheckFill} from 'react-icons/Bs';
+import Head from "next/head";
+import Script from "next/script";
 const checkout = ({cart ,subTotal,addToCart,removeFromCart}) => {
+  const initiatePayment =async()=>{
+    let oid = Math.floor( Math.random()*Date.now());
+    const data = { cart , subTotal ,oid , email:'email'};
+    let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pretransaction`, {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+let txnToken = await a.json()
+console.log(txnToken);
+  
+      var config = {
+        "root": "",
+        "flow": "DEFAULT",
+        "data": {
+        "orderId":oid , /* update order id */
+        "token": txnToken, /* update token value */
+        "tokenType": "TXN_TOKEN",
+        "amount": subTotal /* update amount */
+        },
+        "handler": {
+          "notifyMerchant": function(eventName,data){
+            console.log("notifyMerchant handler function called");
+            console.log("eventName => ",eventName);
+            console.log("data => ",data);
+          } 
+        }
+      };
+              window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
+                  window.Paytm.CheckoutJS.invoke();
+              }).catch(function onError(error){
+                  console.log("error => ",error);
+              });      
+
+  }
   return (
-    <div className="container px-2 sm:m-auto">
+    <div className="container px-2 sm:m-auto"> 
+    <Head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    </Head>
+    <Script type="application/javascript" crossorigin="anonymous" src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MID}`} />
       <h1 className="font-bold text-3xl my-8 text-center">Checkout</h1>
       <h2 className="font-bold text-xl mx-9">1. Delivery Details</h2>
       <div className="mx-auto flex my-4 ">
@@ -121,7 +163,7 @@ return<li key={k}>
 
 
 </div>
-  <Link href={"/checkout"}><button className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2 hover:bg-pink-600 rounded text-sm" > Proceed To Pay : ₹{subTotal}</button></Link>
+  <Link href={"/checkout"}><button onClick={initiatePayment} className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2 hover:bg-pink-600 rounded text-sm" > Proceed To Pay : ₹{subTotal}</button></Link>
       </div>
     </div>
   );

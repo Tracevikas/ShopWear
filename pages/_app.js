@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
+import Script from 'next/script'
 import { useRouter } from 'next/router'
 import LoadingBar from 'react-top-loading-bar'
 import { useState ,useEffect} from 'react'
@@ -59,6 +60,7 @@ setKey(Math.random())
    localStorage.removeItem('token')  
    setKey(Math.random())
    setUser({value:null})
+   router.push('/')
  }
  const buyNow = (itemCode,qty,price,name,size,varient)=>{
    let newCart = {itemCode:{qty:1,price,name,size,varient}}
@@ -87,8 +89,18 @@ const removeFromCart=(itemCode,qty,price,name,size,varient)=>{
     color='#f11946'
     progress={progress}
     onLoaderFinished={() => setProgress(0)}
-  /> <Navbar logout={logout} user={user} key={key} cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
+  />
+  <Script strategy='lazyOnload'
+  src={'https://www.googletagmanager.com/gtag/js?id=UA-179025648-1'}/>
+  <Script strategy='lazyOnload'>
+  { `window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'UA-179025648-1');`}</Script>
+   <Navbar logout={logout} user={user} key={key} cart={cart}  addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
    <Component  cart={cart} buyNow={buyNow} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
  
 <Footer/></>}
 export default MyApp
+
